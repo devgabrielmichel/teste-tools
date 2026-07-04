@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
+if [[ -z "${BASH_SOURCE[0]:-}" ]] || [[ ! -f "${BASH_SOURCE[0]:-}" ]]; then
+  _repo="${CONCEITTO_REPO:-devgabrielmichel/teste-tools}"
+  _ref="${CONCEITTO_REF:-main}"
+  _tmp="$(mktemp -d)"
+  echo "→ Baixando ${_repo} @ ${_ref}..."
+  curl -fsSL "https://codeload.github.com/${_repo}/tar.gz/${_ref}" | tar -xz -C "$_tmp" --strip-components=1
+  export CONCEITTO_TOOLS_DIR="$_tmp"
+  exec /bin/bash "$_tmp/scripts/init.sh" "$@"
+fi
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
