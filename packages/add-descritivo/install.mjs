@@ -171,8 +171,16 @@ export function installKit(options = {}) {
   return { installed: true };
 }
 
+function sameFile(a, b) {
+  try {
+    return fs.realpathSync(a) === fs.realpathSync(b);
+  } catch {
+    return path.resolve(a) === path.resolve(b);
+  }
+}
+
 const isMain =
-  process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
+  process.argv[1] && sameFile(process.argv[1], fileURLToPath(import.meta.url));
 
 if (isMain) {
   try {

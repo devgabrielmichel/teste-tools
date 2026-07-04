@@ -51,9 +51,9 @@ cp -R "$KIT_SRC" "$KIT_DEST"
 
 echo "→ Executando instalação..."
 if ((${#EXTRA_ARGS[@]} > 0)); then
-  (cd "$ROOT" && node "$KIT_DEST/install.mjs" "${EXTRA_ARGS[@]}")
+  (cd "$ROOT" && node descritivo-comercial-kit/install.mjs "${EXTRA_ARGS[@]}")
 else
-  (cd "$ROOT" && node "$KIT_DEST/install.mjs")
+  (cd "$ROOT" && node descritivo-comercial-kit/install.mjs)
 fi
 
 echo ""
