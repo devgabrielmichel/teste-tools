@@ -72,7 +72,11 @@ case "$PROFILE" in
     [[ "$USE_VITE" == "true" ]] && WEB_ARGS+=(--vite)
     [[ "$USE_PRISMA" == "true" ]] && WEB_ARGS+=(--prisma)
     [[ "$FORCE" == "true" ]] && WEB_ARGS+=(--force)
-    bash "$SCRIPT_DIR/install-web.sh" "${WEB_ARGS[@]}" "$ROOT"
+    if ((${#WEB_ARGS[@]} > 0)); then
+      bash "$SCRIPT_DIR/install-web.sh" "${WEB_ARGS[@]}" "$ROOT"
+    else
+      bash "$SCRIPT_DIR/install-web.sh" "$ROOT"
+    fi
     ;;
   app)
     APP_BASE="$TOOLS/packages/default-initial-app/base"
