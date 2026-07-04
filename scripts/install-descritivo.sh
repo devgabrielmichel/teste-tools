@@ -50,7 +50,11 @@ mkdir -p "$(dirname "$KIT_DEST")"
 cp -R "$KIT_SRC" "$KIT_DEST"
 
 echo "→ Executando instalação..."
-(cd "$ROOT" && node "$KIT_DEST/install.mjs" "${EXTRA_ARGS[@]}")
+if ((${#EXTRA_ARGS[@]} > 0)); then
+  (cd "$ROOT" && node "$KIT_DEST/install.mjs" "${EXTRA_ARGS[@]}")
+else
+  (cd "$ROOT" && node "$KIT_DEST/install.mjs")
+fi
 
 echo ""
 echo "✓ Descritivo comercial instalado em: $ROOT"
