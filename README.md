@@ -10,7 +10,7 @@ Repo: [github.com/devgabrielmichel/teste-tools](https://github.com/devgabrielmic
 
 ```bash
 mkdir meu-produto && cd meu-produto && git init
-curl -fsSL https://raw.githubusercontent.com/devgabrielmichel/teste-tools/main/scripts/init.sh | bash -s -- \
+curl -fsSL https://raw.githubusercontent.com/devgabrielmichel/teste-tools/main/scripts/bootstrap-init.sh | bash -s -- \
   --profile web \
   --with-descritivo \
   --with-workflow \
