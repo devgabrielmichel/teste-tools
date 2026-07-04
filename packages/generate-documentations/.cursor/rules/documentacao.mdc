@@ -1,0 +1,11 @@
+---
+description: Padrão para arquivos em /docs — Markdown, um módulo por arquivo
+globs: docs/**
+alwaysApply: false
+---
+
+# Documentação técnica
+
+- Arquivos `.md` somente em `/docs`.
+- Um arquivo por módulo, tela ou feature relevante.
+- Não duplicar conteúdo comercial de `docs/comercial/` (PDF de vendas).

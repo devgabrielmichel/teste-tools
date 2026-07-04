@@ -1,0 +1,22 @@
+---
+description: Stack web React + Node — convenções frontend e backend
+globs: frontend/**,backend/**
+alwaysApply: false
+---
+
+# Stack web (React + Node)
+
+## Frontend
+
+- Componentes e páginas em `frontend/src/`.
+- Preferir Vite quando o projeto usar `--vite` no init Conceitto.
+
+## Backend
+
+- APIs e serviços em `backend/src/`.
+- Com `--prisma`: schema em `backend/prisma/`, migrations versionadas.
+
+## Integração
+
+- Contratos entre frontend e backend documentados em `/docs`.
+- Não expor detalhes de stack em documentação comercial (`docs/comercial/`).

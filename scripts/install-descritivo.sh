@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
 # Instala o kit descritivo comercial em um projeto existente.
-# Uso:
-#   curl -fsSL https://raw.githubusercontent.com/devgabrielmichel/teste-tools/main/scripts/install-descritivo.sh | bash
-#   curl -fsSL ... | bash -s -- /caminho/do/projeto
-#   curl -fsSL ... | bash -s -- --force
 set -euo pipefail
 
-REPO="${DESCRITIVO_REPO:-devgabrielmichel/teste-tools}"
-REF="${DESCRITIVO_REF:-main}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=lib/common.sh
+source "$SCRIPT_DIR/lib/common.sh"
 
-# Raiz do projeto = diretório atual ou primeiro argumento que não é flag
-ROOT="$(pwd)"
+# Compatibilidade com variáveis antigas
+CONCEITTO_REPO="${DESCRITIVO_REPO:-${CONCEITTO_REPO:-devgabrielmichel/teste-tools}}"
+CONCEITTO_REF="${DESCRITIVO_REF:-${CONCEITTO_REF:-main}}"
+export CONCEITTO_REPO CONCEITTO_REF
+
 EXTRA_ARGS=()
+ROOT=""
 for arg in "$@"; do
   case "$arg" in
     -*) EXTRA_ARGS+=("$arg") ;;
     *)
-      if [[ "$ROOT" == "$(pwd)" ]]; then
+      if [[ -z "$ROOT" ]]; then
         ROOT="$(cd "$arg" && pwd)"
       else
         EXTRA_ARGS+=("$arg")
@@ -25,22 +26,21 @@ for arg in "$@"; do
   esac
 done
 
+[[ -z "$ROOT" ]] && ROOT="$(pwd)"
+
 if [[ ! -f "$ROOT/package.json" && ! -d "$ROOT/frontend" && ! -d "$ROOT/.git" ]]; then
   echo "Aviso: não parece a raiz de um projeto (sem package.json, frontend/ ou .git)." >&2
   echo "Continuando em: $ROOT" >&2
 fi
 
-TMP="$(mktemp -d)"
-trap 'rm -rf "$TMP"' EXIT
+TOOLS="$(conceitto_fetch_tools_dir)"
+trap conceitto_cleanup_tools_dir EXIT
 
-echo "→ Baixando ${REPO} @ ${REF}..."
-curl -fsSL "https://codeload.github.com/${REPO}/tar.gz/${REF}" | tar -xz -C "$TMP" --strip-components=1
-
-KIT_SRC="$TMP/packages/add-descritivo"
+KIT_SRC="$TOOLS/packages/add-descritivo"
 KIT_DEST="$ROOT/descritivo-comercial-kit"
 
 if [[ ! -f "$KIT_SRC/install.mjs" ]]; then
-  echo "Erro: kit não encontrado em packages/add-descritivo no repositório." >&2
+  echo "Erro: kit não encontrado em packages/add-descritivo." >&2
   exit 1
 fi
 
@@ -56,9 +56,12 @@ else
   (cd "$ROOT" && node descritivo-comercial-kit/install.mjs)
 fi
 
+conceitto_cleanup_tools_dir
+trap - EXIT
+
 echo ""
 echo "✓ Descritivo comercial instalado em: $ROOT"
 echo "  Próximos passos:"
-echo "    1. npm install   (na raiz ou em frontend/, conforme o projeto)"
+echo "    1. npm install   (na raiz ou em frontend/)"
 echo "    2. npx playwright install chromium   (uma vez por máquina)"
 echo "    3. No Cursor: peça para gerar o descritivo comercial em PDF"

@@ -1,0 +1,21 @@
+# Dependências
+node_modules/
+dist/
+build/
+.env
+.env.*
+!.env.example
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Playwright (descritivo comercial)
+/test-results/
+/playwright-report/

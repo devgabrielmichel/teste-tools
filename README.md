@@ -1,51 +1,114 @@
-# teste-tools — Kit Descritivo Comercial
+# conceittodev-tools
 
-Ferramentas da Conceitto para gerar **descritivo comercial em PDF** com IA no Cursor.
+Repositório padrão Conceitto: **regras de projeto**, **scaffold de stack** e **ferramentas** instaláveis por um comando — sem npm pago, sem copiar ZIP.
 
-## Projeto existente (Mapa, VrBrokers, etc.)
+Repo: [github.com/devgabrielmichel/teste-tools](https://github.com/devgabrielmichel/teste-tools)
 
-Na raiz do projeto:
+---
+
+## Projeto novo (recomendado)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/devgabrielmichel/teste-tools/main/scripts/install-descritivo.sh | bash
+mkdir meu-produto && cd meu-produto && git init
+curl -fsSL https://raw.githubusercontent.com/devgabrielmichel/teste-tools/main/scripts/init.sh | bash -s -- \
+  --profile web \
+  --with-descritivo \
+  --with-workflow \
+  --with-docs
 ```
 
-Com flags do instalador:
+Variantes da stack web:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/devgabrielmichel/teste-tools/main/scripts/install-descritivo.sh | bash -s -- --force
+# ... | bash -s -- --profile web --vite --prisma --with-descritivo
 ```
 
 Depois:
 
 ```bash
-npm install
-npx playwright install chromium   # uma vez por máquina
+cd frontend && npm install
+cd ../backend && npm install
+npx playwright install chromium   # se usou --with-descritivo
 ```
 
-No Cursor: *"Gere o descritivo comercial em PDF analisando este projeto"*.
+---
 
-## Estrutura deste repositório
+## Projeto existente (Mapa, VrBrokers, etc.)
 
-| Caminho | Função |
-|---------|--------|
-| `packages/add-descritivo/` | Motor do kit (scripts, templates, AGENTS.md) |
-| `scripts/install-descritivo.sh` | Baixa o kit e instala no projeto alvo |
-
-## Atualizar kit em projeto já instalado
+Instale **só o que precisar** — cada pacote é independente:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/devgabrielmichel/teste-tools/main/scripts/install-descritivo.sh | bash -s -- --force
+# Padrões Conceitto (rules + AGENTS.md)
+curl -fsSL .../install-shared.sh | bash
+
+# Descritivo comercial PDF
+curl -fsSL .../install-descritivo.sh | bash
+
+# Templates GitHub / PR
+curl -fsSL .../install-workflow.sh | bash
+
+# Scaffold /docs
+curl -fsSL .../install-docs.sh | bash
 ```
 
-O `descritivo.content.json` do projeto **não é apagado** (use `--reset-content` só para recomeçar do template).
+Substitua `...` por:
 
-## Versão específica
+`https://raw.githubusercontent.com/devgabrielmichel/teste-tools/main/scripts`
+
+---
+
+## Pacotes disponíveis
+
+| Pacote | Uso |
+|--------|-----|
+| `shared/` | Rules Cursor + AGENTS.md (sempre no init) |
+| `add-descritivo` | PDF comercial + IA no Cursor |
+| `default-initial-web` | React + Node (+ `--vite`, `--prisma`) |
+| `default-initial-app` | Flutter — em preparação |
+| `workflow-github-instructions` | `.github/` + PR template |
+| `generate-documentations` | Templates e skill para `/docs` |
+
+Detalhes: [packages/README.md](packages/README.md)
+
+---
+
+## Estrutura do repositório
+
+```
+teste-tools/
+├── shared/                 # rules/skills que TODO projeto recebe
+├── packages/               # pacotes combináveis (visão Camila)
+│   ├── add-descritivo/
+│   ├── default-initial-web/
+│   ├── default-initial-app/
+│   ├── workflow-github-instructions/
+│   └── generate-documentations/
+└── scripts/
+    ├── init.sh             # projeto novo
+    ├── install-shared.sh
+    ├── install-descritivo.sh
+    ├── install-web.sh
+    ├── install-workflow.sh
+    └── install-docs.sh
+```
+
+---
+
+## Versão fixa
 
 ```bash
-DESCRITIVO_REF=v1.0.0 curl -fsSL .../install-descritivo.sh | bash
+CONCEITTO_REF=v1.0.0 curl -fsSL .../init.sh | bash -s -- --profile web --with-descritivo
 ```
+
+---
+
+## Cursor / Trae
+
+- **Cursor:** `.cursor/rules`, `.cursor/skills`, hooks (descritivo)
+- **Trae / outros:** `AGENTS.md` na raiz + `/docs`
+
+---
 
 ## Desenvolvimento
 
-Alterações em `packages/add-descritivo/` → commit + push → projetos rodam o script de novo com `--force` para atualizar.
+Altere `packages/` ou `shared/` → commit → push. Projetos rodam de novo com `--force` nos scripts de install.

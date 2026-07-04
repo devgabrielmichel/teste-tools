@@ -1,0 +1,32 @@
+---
+description: Padrões Conceitto — estrutura, segurança, docs e testes (todo projeto)
+alwaysApply: true
+---
+
+# Conceitto — padrões do projeto
+
+## Estrutura
+
+- Código web em `frontend/` e `backend/` — nunca misturar na raiz.
+- Documentação em `/docs` (Markdown, um arquivo por módulo/tela quando aplicável).
+- Testes apenas em `/tests`.
+
+## Banco de dados
+
+- Alterações de schema **somente** via migrations versionadas e reversíveis quando possível.
+- Nunca alterar estrutura manualmente em produção.
+
+## Segurança e Git
+
+- Nunca commitar `.env`, credenciais, `node_modules/`, `/dist` ou `*.log`.
+- Secrets só em variáveis de ambiente — nunca hardcoded.
+
+## Logs
+
+- Registrar ações críticas: acesso a telas, cadastro, edição, exclusão, consumo de APIs.
+- Incluir: tipo, timestamp, usuário, recurso afetado.
+
+## Código
+
+- Mudanças mínimas e focadas; reutilizar o que já existe no projeto.
+- Responder em português quando interagir com o time.

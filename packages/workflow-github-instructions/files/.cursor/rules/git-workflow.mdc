@@ -1,0 +1,12 @@
+---
+description: Commits, PRs e GitHub — padrão Conceitto
+globs: .github/**
+alwaysApply: false
+---
+
+# Workflow GitHub
+
+- Commits claros, focados no *porquê*.
+- PRs pequenos e revisáveis; usar o template em `.github/PULL_REQUEST_TEMPLATE.md`.
+- Nunca commitar secrets, `.env` ou artefatos de build.
+- Migrations de banco versionadas antes de merge quando houver alteração de schema.
