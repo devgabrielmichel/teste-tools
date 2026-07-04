@@ -42,7 +42,7 @@ Instale **só o que precisar** — cada pacote é independente:
 curl -fsSL .../install-shared.sh | bash
 
 # Descritivo comercial PDF
-curl -fsSL .../install-descritivo.sh | bash
+curl -fsSL https://raw.githubusercontent.com/devgabrielmichel/teste-tools/main/scripts/bootstrap-descritivo.sh | bash
 
 # Templates GitHub / PR
 curl -fsSL .../install-workflow.sh | bash
