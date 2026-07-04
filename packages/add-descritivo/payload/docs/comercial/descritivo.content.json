@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "product": "NOME_DO_PRODUTO",
+    "version": "1.0.0",
+    "site": "seusite.com.br",
+    "badge": "Solução para o setor público e privado",
+    "tagline": "Descreva em duas frases o valor principal do produto — o que muda na operação e qual resultado o cliente obtém.",
+    "coverNote": "Material de apoio para apresentações comerciais e propostas. Preencha com conteúdo denso: o PDF deve transmitir substância, não folhas vazias."
+  },
+  "problema": {
+    "lead": "Descreva a dor principal do cliente antes do seu produto — com contexto de mercado e impacto operacional.",
+    "paragraphs": [
+      "Explique o trabalho manual, risco ou lentidão que o cliente enfrenta hoje. Cite exemplos concretos do dia a dia (planilhas, retrabalho, filas, divergências).",
+      "Quantifique o impacto: tempo perdido, custo operacional, risco legal ou perda de margem. Use números quando possível.",
+      "Descreva o cenário atual sem o produto: quantos sistemas, quantas pessoas envolvidas, onde a informação se perde."
+    ],
+    "indicadores": [
+      { "label": "Tempo médio do processo atual", "value": "A definir com o cliente" },
+      { "label": "Retrabalho estimado", "value": "A definir" },
+      { "label": "Risco de não conformidade", "value": "Alto / Médio / Baixo" },
+      { "label": "Público-alvo principal", "value": "A definir" },
+      { "label": "Volume operacional típico", "value": "A definir" }
+    ]
+  },
+  "solucao": {
+    "lead": "O <strong>NOME_DO_PRODUTO</strong> resolve isso concentrando o fluxo em uma plataforma única — com visibilidade em tempo real e integração ao ecossistema do cliente.",
+    "paragraph": "Explique em 3–4 frases como o produto resolve a dor. Foque no resultado: menos etapas, menos erro, mais rastreabilidade. Sem mencionar rotas, frameworks ou APIs.",
+    "pillars": [
+      { "title": "O que muda na rotina", "text": "Benefício prático no dia a dia — o que deixa de ser manual." },
+      { "title": "O que fica registrado", "text": "Rastreabilidade, auditoria e histórico para gestão e conformidade." },
+      { "title": "Quem usa", "text": "Perfis de usuário e como cada um interage com a plataforma." }
+    ]
+  },
+  "perfis": [
+    {
+      "id": "gestor",
+      "title": "Para o gestor",
+      "beneficios": [
+        { "titulo": "Visão gerencial", "texto": "acompanhe indicadores e pendências em um único painel, sem depender de relatórios manuais." },
+        { "titulo": "Conformidade", "texto": "reduza risco de irregularidades com validações automáticas e trilha de auditoria." },
+        { "titulo": "Decisão mais rápida", "texto": "dados consolidados em tempo real para aprovar, priorizar e corrigir desvios." },
+        { "titulo": "Previsibilidade", "texto": "antecipe gargalos e desvios antes que impactem prazos ou custos." },
+        { "titulo": "Governança", "texto": "controle de permissões e responsabilidades por perfil e por etapa." }
+      ]
+    },
+    {
+      "id": "comprador",
+      "title": "Para o comprador / requisitante",
+      "beneficios": [
+        { "titulo": "Menos burocracia", "texto": "fluxo guiado do pedido à aprovação, sem planilhas paralelas." },
+        { "titulo": "Catálogo confiável", "texto": "itens validados, preços atualizados e regras de compra aplicadas automaticamente." },
+        { "titulo": "Rastreabilidade", "texto": "sabe em qual etapa está cada solicitação e quem é o responsável." },
+        { "titulo": "Agilidade", "texto": "conclua solicitações em minutos, não em dias de idas e vindas." },
+        { "titulo": "Histórico", "texto": "consulte compras anteriores para repetir pedidos e negociar melhor." }
+      ]
+    },
+    {
+      "id": "fornecedor",
+      "title": "Para o fornecedor",
+      "beneficios": [
+        { "titulo": "Canal direto", "texto": "receba pedidos e atualizações sem intermediários desnecessários." },
+        { "titulo": "Menos retrabalho", "texto": "dados padronizados reduzem devoluções e correções de cadastro." },
+        { "titulo": "Previsibilidade de demanda", "texto": "visibilidade de pedidos em andamento para planejar entrega e estoque." },
+        { "titulo": "Conformidade documental", "texto": "anexos e certificações vinculados ao pedido, sem perda de arquivos." },
+        { "titulo": "Relacionamento", "texto": "histórico de transações fortalece a parceria com o comprador." }
+      ]
+    },
+    {
+      "id": "operador",
+      "title": "Para o operador / backoffice",
+      "beneficios": [
+        { "titulo": "Fila organizada", "texto": "priorize tarefas por urgência, valor ou SLA definido pela gestão." },
+        { "titulo": "Validação automática", "texto": "o sistema bloqueia inconsistências antes da aprovação final." },
+        { "titulo": "Menos digitação", "texto": "dados preenchidos uma vez e reutilizados em todo o fluxo." },
+        { "titulo": "Suporte à auditoria", "texto": "logs de quem fez o quê e quando, prontos para consulta." },
+        { "titulo": "Integração", "texto": "informação flui para ERP e sistemas legados sem redigitação." }
+      ]
+    }
+  ],
+  "jornada": {
+    "flowSteps": ["Cadastro", "Solicitação", "Validação", "Aprovação", "Pedido", "Entrega", "Fechamento"],
+    "steps": [
+      { "titulo": "Cadastro e perfil", "texto": "O usuário acessa a plataforma, completa o perfil e recebe as permissões adequadas ao seu papel." },
+      { "titulo": "Exploração do catálogo", "texto": "Navega itens homologados, compara opções e monta a solicitação com regras de negócio já aplicadas." },
+      { "titulo": "Solicitação formal", "texto": "Envia o pedido com justificativa, anexos e centro de custo — tudo em um único formulário guiado." },
+      { "titulo": "Validação automática", "texto": "O sistema verifica limites, documentação e conformidade antes de encaminhar para aprovação." },
+      { "titulo": "Aprovação hierárquica", "texto": "Gestores aprovam ou devolvem com motivo registrado; notificações mantêm todos informados." },
+      { "titulo": "Geração do pedido", "texto": "Pedido formalizado e encaminhado ao fornecedor ou integrado ao ERP, conforme o processo do cliente." },
+      { "titulo": "Acompanhamento", "texto": "Status de entrega, recebimento e pendências visíveis para comprador, fornecedor e operador." },
+      { "titulo": "Fechamento e auditoria", "texto": "Conferência final, registro de entrega e trilha completa disponível para gestão e auditoria." }
+    ],
+    "diagrama": "GESTOR → define regras, aprova e monitora indicadores\n       ↓\nCOMPRADOR → solicita itens no catálogo homologado\n       ↓\nSISTEMA → valida regras, limites e documentação\n       ↓\nOPERADOR → trata exceções e integra com ERP\n       ↓\nFORNECEDOR → recebe pedido, entrega e atualiza status\n       ↓\nAUDITORIA → trilha completa de cada transação",
+    "primeiroAcesso": "O usuário recebe convite ou credenciais, define senha segura e acessa um painel inicial com guia das primeiras ações. Perfis e permissões já vêm configurados conforme o contrato de implantação.",
+    "segurancaAcesso": "autenticação segura com criptografia, controle de sessão, permissões por perfil e registro de acessos para auditoria — incluindo tentativas inválidas e alterações sensíveis."
+  },
+  "diferenciais": [
+    { "nome": "Automação de regras de negócio", "beneficio": "Reduz erros humanos e garante que cada pedido siga a política de compras do cliente." },
+    { "nome": "Trilha de auditoria completa", "beneficio": "Cada ação fica registrada com usuário, data e contexto — pronta para fiscalização interna ou externa." },
+    { "nome": "Catálogo homologado", "beneficio": "Itens e fornecedores pré-validados eliminam compras fora de política." },
+    { "nome": "Fluxo configurável", "beneficio": "Etapas de aprovação e validação adaptadas ao organograma e às normas do cliente." },
+    { "nome": "Integração com ERP", "beneficio": "Pedidos e dados mestres sincronizados sem redigitação manual." },
+    { "nome": "Notificações em tempo real", "beneficio": "Responsáveis avisados na hora certa — menos atrasos por pendência esquecida." }
+  ],
+  "compliance": [
+    "Atende às exigências de licitações e compras públicas quando aplicável (Lei 14.133/2021 e normas correlatas).",
+    "Registro de logs para auditoria e prestação de contas.",
+    "Controle de acesso por perfil e segregação de funções.",
+    "Rastreabilidade de documentos anexados a cada transação.",
+    "Políticas de retenção e backup conforme contrato de implantação."
+  ],
+  "integracoes": [],
+  "plataforma": "Plataforma web em nuvem, escalável e acessível pelo navegador — sem instalação local. Operação monitorada com alta disponibilidade e suporte especializado.",
+  "modeloComercial": [
+    { "titulo": "Modelo de cobrança", "texto": "licenciamento mensal ou anual, com opção de implantação assistida — conforme contrato." },
+    { "titulo": "Implantação", "texto": "configuração de fluxos, catálogo, perfis e integrações com acompanhamento da equipe técnica." },
+    { "titulo": "Suporte", "texto": "canal dedicado para dúvidas operacionais e evolução do ambiente." },
+    { "titulo": "Evolução", "texto": "atualizações de produto incluídas no contrato de manutenção." }
+  ]
+}

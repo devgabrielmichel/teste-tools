@@ -1,0 +1,2 @@
+Copie a pasta descritivo-comercial-kit para a raiz do projeto.
+Abra no Cursor e peça o descritivo comercial em PDF.

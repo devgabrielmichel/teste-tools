@@ -1,0 +1,11 @@
+{
+  "watchDirs": ["frontend/src", "backend/src", "src"],
+  "outputDir": "docs/comercial",
+  "logoPath": "frontend/public/images/logo.png",
+  "pdfFileName": "Descritivo-Tecnico-Comercial.pdf",
+  "footerTitle": "Descritivo Técnico Comercial",
+  "integrationScanDirs": ["frontend/src", "backend/src", "src"],
+  "theme": {
+    "preset": "conceitto"
+  }
+}

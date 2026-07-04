@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "node descritivo-comercial-kit/install.mjs --quiet --bootstrap-only"
+      }
+    ],
+    "stop": [
+      {
+        "command": "node descritivo-comercial-kit/install.mjs --quiet"
+      }
+    ]
+  }
+}

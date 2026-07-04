@@ -1,0 +1,16 @@
+---
+description: Padrão para documentação comercial em docs/comercial/ — linguagem de vendas, não técnica
+globs: docs/comercial/**
+alwaysApply: false
+---
+
+# Documentação Comercial
+
+Ao editar arquivos em `docs/comercial/`:
+
+1. Público-alvo: time comercial e órgãos públicos — **não desenvolvedores**.
+2. Edite `descritivo.content.json` para textos comerciais — **não edite o HTML** (é gerado).
+3. Aplicar Regra do "E daí?" em toda característica.
+4. Proibido: rotas, JWT, bcrypt, nomes de frameworks, status em inglês, endpoints API.
+5. Após alterações no JSON, rode `npm run descritivo` em `frontend/`.
+6. Integrações são detectadas automaticamente do código; textos manuais vão no JSON.
